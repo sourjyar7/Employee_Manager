@@ -1,4 +1,4 @@
-from employee_manager.__init__ import db
+from employee_manager import db
 
 class Employee(db.Model):
     __tablename__='Employees'

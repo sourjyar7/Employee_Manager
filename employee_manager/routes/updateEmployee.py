@@ -1,5 +1,5 @@
 from flask import jsonify,Blueprint
-from employee_manager.middleware.validator import validate_details
+from employee_manager.middleware.employee_validator import validate_details
 
 update_employee=Blueprint('update_employee',__name__)
 
