@@ -1,4 +1,4 @@
-import employee_manager
+from employee_manager import db
 
 class EmployeeSaver:
     employee=None
@@ -7,6 +7,9 @@ class EmployeeSaver:
         self.employee=employee 
     
     def save(self):
-        employee_manager.db.session.add(self.employee)
-        employee_manager.db.session.commit()
-        return "success"  
+        try:
+            db.session.add(self.employee)
+            db.session.commit()
+            return "success"
+        except Exception as err:
+            return "failure"      

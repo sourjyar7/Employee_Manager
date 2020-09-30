@@ -12,8 +12,7 @@ class EmployeeInputSchema(Schema):
     class Meta:
         ma.fields=('eid','firstname','lastname','department','email','mobile_no','doj')
 
-class EmployeeDbSchema(ma.Schema):
+class EmployeeDbSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model=Employee
         ma.fields=('eid','firstname','lastname','department','email','mobile_no','doj')
-        
