@@ -15,6 +15,7 @@ from employee_manager.routes.addEmployee import add_employee
 from employee_manager.routes.deleteEmployee import delete_employee
 from employee_manager.routes.updateEmployee import update_employee
 from employee_manager.routes.addDepartments import add_departments
+from employee_manager.routes.addProjects import add_projects
 
 
 app.register_blueprint(get_employee)
@@ -23,5 +24,6 @@ app.register_blueprint(add_employee)
 app.register_blueprint(delete_employee)
 app.register_blueprint(update_employee)
 app.register_blueprint(add_departments)
+app.register_blueprint(add_projects)
 
 
