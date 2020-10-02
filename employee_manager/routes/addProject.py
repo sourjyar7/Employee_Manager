@@ -16,8 +16,3 @@ def add():
     employee["doj"]=request.json["doj"]
     employee_adder=EmployeeAdder(employee)
     return jsonify({'msg': employee_adder.add_employee()}),200
-    
-    
-    #return jsonify({'msg' : 'addEmployee'})
-
-

@@ -14,12 +14,14 @@ from employee_manager.routes.getEmployees import get_employees
 from employee_manager.routes.addEmployee import add_employee
 from employee_manager.routes.deleteEmployee import delete_employee
 from employee_manager.routes.updateEmployee import update_employee
-#from employee_manager.middleware.employee_validator import validate_details
+from employee_manager.routes.addDepartments import add_departments
+
 
 app.register_blueprint(get_employee)
 app.register_blueprint(get_employees)
 app.register_blueprint(add_employee)
 app.register_blueprint(delete_employee)
 app.register_blueprint(update_employee)
+app.register_blueprint(add_departments)
 
 
