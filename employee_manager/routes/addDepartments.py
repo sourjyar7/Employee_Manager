@@ -1,5 +1,4 @@
 from flask import jsonify,Blueprint,request
-from employee_manager.middleware.employee_validator import validate_details
 from employee_manager.services.add_department_service import DepartmentAdder
 
 
@@ -9,7 +8,7 @@ add_departments=Blueprint('add_departments',__name__)
 def add():
     count=0
     for department in request.json:
-        department_adder=DepartmentAdder(department)
+        department_adder=DepartmentAdder(department['dept'],department['projects'])
         if department_adder.add_department():
             count=count+1
     

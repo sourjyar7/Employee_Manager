@@ -8,8 +8,14 @@ def validate_details(func):
     def decorator(*args,**kwargs):
         print("validator running")
         employee_schema=EmployeeInputSchema()
+        employee={}
+        employee["firstname"]=request.json["firstname"]
+        employee["lastname"]=request.json["lastname"]
+        employee["email"]=request.json["email"]
+        employee["mobile_no"]=request.json["mobile_no"]
+        employee["doj"]=request.json["doj"]
         try:
-          employee_schema.load(request.json)
+          employee_schema.load(employee)
           return func(*args,**kwargs)
         except ValidationError as err:
           print(err.messages) 

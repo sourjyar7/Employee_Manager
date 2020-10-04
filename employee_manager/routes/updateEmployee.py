@@ -7,11 +7,11 @@ update_employee=Blueprint('update_employee',__name__)
 @validate_details
 def update(id):
     employee={}
+    departments=request.json["departments"]
     employee["firstname"]=request.json["firstname"]
     employee["lastname"]=request.json["lastname"]
-    employee["department"]=request.json["department"]
     employee["email"]=request.json["email"]
     employee["mobile_no"]=request.json["mobile_no"]
     employee["doj"]=request.json["doj"]
-    employ_updater=EmployeeUpdater(id,employee)
+    employ_updater=EmployeeUpdater(id,employee,departments)
     return employ_updater.update_employee()

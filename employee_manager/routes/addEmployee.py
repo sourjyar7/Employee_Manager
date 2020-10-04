@@ -9,12 +9,13 @@ add_employee=Blueprint('add_employee',__name__)
 @validate_details
 def add():
     employee={}
+    departments=request.json["departments"]
     employee["firstname"]=request.json["firstname"]
     employee["lastname"]=request.json["lastname"]
     employee["email"]=request.json["email"]
     employee["mobile_no"]=request.json["mobile_no"]
     employee["doj"]=request.json["doj"]
-    employee_adder=EmployeeAdder(employee)
+    employee_adder=EmployeeAdder(employee,departments)
     return jsonify({'msg': employee_adder.add_employee()}),200
     
     
