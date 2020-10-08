@@ -4,4 +4,5 @@ Uses PostgreSQL as the backend database.
 
 ### Frameworks and Tools used : flask, flask-sqlalchemy, marshmallow, postgresql
 
+### Checkout the Designs.md file for the API design
 
